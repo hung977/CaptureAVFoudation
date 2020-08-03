@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,93 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVFoudationExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="GKL-aA-p3c">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xác thực thẻ căn cước" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FF8-fv-1xG">
+                                <rect key="frame" x="20" y="44" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIE-PS-UPA">
+                                <rect key="frame" x="372" y="45" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="3fm-kC-jco"/>
+                                    <constraint firstAttribute="height" constant="22" id="tbE-82-fMC"/>
+                                </constraints>
+                                <state key="normal" image="Symbol"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LzI-x4-CUk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ảnh mặt trước" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-fH-5Ez">
+                                <rect key="frame" x="20" y="662" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.99607843137254903" green="0.86274509803921573" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng chụp ảnh mặt trước trong điều kiện đủ sáng và không bị nghiêng, mờ." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaL-oe-Nws">
+                                <rect key="frame" x="20" y="696.5" width="374" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcT-3W-cgb">
+                                <rect key="frame" x="170" y="748" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="OYH-9M-x8W"/>
+                                    <constraint firstAttribute="height" constant="74" id="bmX-L4-kb2"/>
+                                </constraints>
+                                <state key="normal" image="Record Button"/>
+                                <connections>
+                                    <action selector="captureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukz-Wz-rog"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WIE-PS-UPA" firstAttribute="centerY" secondItem="FF8-fv-1xG" secondAttribute="centerY" id="3xr-hX-k5B"/>
+                            <constraint firstItem="JaL-oe-Nws" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4xL-Ep-IKH"/>
+                            <constraint firstItem="cmc-fH-5Ez" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6cI-lc-fi1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cmc-fH-5Ez" secondAttribute="trailing" constant="20" id="8g2-2m-JJ6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WIE-PS-UPA" secondAttribute="trailing" constant="20" id="AUG-cq-rYP"/>
+                            <constraint firstItem="GKL-aA-p3c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B8H-cH-kdf"/>
+                            <constraint firstItem="FF8-fv-1xG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GJ0-hv-Xts"/>
+                            <constraint firstItem="WIE-PS-UPA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="GXr-8s-8Kg"/>
+                            <constraint firstItem="FF8-fv-1xG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MYZ-GY-Wfg"/>
+                            <constraint firstAttribute="bottom" secondItem="GKL-aA-p3c" secondAttribute="bottom" id="QlV-4g-zED"/>
+                            <constraint firstItem="GKL-aA-p3c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SNl-18-sFM"/>
+                            <constraint firstItem="JaL-oe-Nws" firstAttribute="top" secondItem="cmc-fH-5Ez" secondAttribute="bottom" constant="8" id="ZWk-VE-LWz"/>
+                            <constraint firstItem="GKL-aA-p3c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cff-cm-nQ5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FF8-fv-1xG" secondAttribute="trailing" constant="20" id="ekd-xm-NPh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JaL-oe-Nws" secondAttribute="trailing" constant="20" id="fPZ-gb-oNx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hcT-3W-cgb" secondAttribute="bottom" constant="40" id="sLB-1X-51m"/>
+                            <constraint firstItem="hcT-3W-cgb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vDp-1r-njM"/>
+                            <constraint firstItem="hcT-3W-cgb" firstAttribute="top" secondItem="JaL-oe-Nws" secondAttribute="bottom" constant="20" id="ykp-ov-MnH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hED-vx-Qmb"/>
+                    <connections>
+                        <outlet property="decriptionLabel" destination="JaL-oe-Nws" id="kuo-Tn-T8c"/>
+                        <outlet property="overlayImage" destination="GKL-aA-p3c" id="m00-fZ-o6A"/>
+                        <outlet property="textLabel" destination="cmc-fH-5Ez" id="ZBz-FM-7Ew"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Record Button" width="74" height="74"/>
+        <image name="Symbol" width="22" height="22"/>
+        <image name="overlay" width="375" height="812"/>
+    </resources>
 </document>
